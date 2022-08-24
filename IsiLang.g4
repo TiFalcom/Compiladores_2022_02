@@ -44,6 +44,18 @@ grammar IsiLang;
 		}
 	}
 	
+	public static boolean isNumeric(String strNum) {
+	    if (strNum == null) {
+	        return false;
+	    }
+	    try {
+	        double d = Double.parseDouble(strNum);
+	    } catch (NumberFormatException nfe) {
+	        return false;
+	    }
+	    return true;
+	}
+
 	public void exibeComandos(){
 		for (AbstractCommand c: program.getComandos()){
 			System.out.println(c);
@@ -56,7 +68,7 @@ grammar IsiLang;
 	
 	public void exibeWarnings() {
 		for (IsiSymbol is: symbolTableWar.getMap()) {
-			System.out.println("Simbolo " + is.getName() + "declarado mas nao utilizado");
+			System.out.println("Simbolo " + is.getName() + " declarado mas nao utilizado");
 		}
 	}
 }
@@ -170,6 +182,17 @@ cmdattrib	:  ID { verificaID(_input.LT(-1).getText());
                expr 
                SC
                {
+               	 
+                 IsiVariable var = (IsiVariable)symbolTable.get(_exprID);
+               	 try {
+				        if (var.getType() == 0 & isNumeric(_exprContent)== false) {
+				        	throw new IsiSemanticException("Symbol "+_exprID+" is not declared as number");
+				        }
+				    } catch (IsiSemanticException aux) {
+				        if(var.getType() == 1 & isNumeric(_exprContent)) {
+				        	throw new IsiSemanticException("Symbol "+_exprID+" is not declared as string");
+				        }
+				    }
                	 CommandAtribuicao cmd = new CommandAtribuicao(_exprID, _exprContent);
                	 stack.peek().add(cmd);
                }

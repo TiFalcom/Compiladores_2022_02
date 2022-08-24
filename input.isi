@@ -2,7 +2,9 @@ programa
 
   numero a, b;
   numero j;
-  texto  t1;
+  numero  t1;
+  texto t2;
+  numero c, d;
 
   t1 = 'teste';
   leia(a);

@@ -4,8 +4,11 @@ public class MainClass{
        Scanner _key = new Scanner(System.in);
 double  a;
 double  b;
+double  c;
+double  d;
 double  j;
-String  t1;
+double  t1;
+String  t2;
 t1 = 'teste';
 a= _key.nextDouble();
 b= _key.nextDouble();

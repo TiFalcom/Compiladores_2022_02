@@ -1,5 +1,7 @@
 package br.com.compiladores.isilanguage.datastructures;
 
+import br.com.compiladores.isilanguage.exceptions.IsiSemanticException;
+
 public class IsiVariable extends IsiSymbol {
 	
 	public static final int NUMBER=0;
@@ -12,11 +14,15 @@ public class IsiVariable extends IsiSymbol {
 	
 	public IsiVariable(String name, int type, String value) {
 		super(name);
+		
+		
 		this.type = type;
 		this.value = value;
 		this.att_count = 0;
-		this.use_count = 0;
+		this.use_count = 0;	
 	}
+	
+	
 
 	public int getType() {
 		return type;

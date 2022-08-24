@@ -1,5 +1,6 @@
 package br.com.compiladores.isilanguage.ast;
 
+
 public class CommandAtribuicao extends AbstractCommand{
 
 	private String id;

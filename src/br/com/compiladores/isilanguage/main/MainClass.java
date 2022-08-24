@@ -36,6 +36,8 @@ public class MainClass {
 			
 			parser.generateCode();
 			
+			parser.exibeWarnings();
+			
 		}
 		catch(IsiSemanticException ex) {
 			System.err.println("Semantic error - "+ex.getMessage());
