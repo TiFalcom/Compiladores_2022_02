@@ -4,11 +4,19 @@ Projeto de compiladores para o quadrimestre suplementar 2022.2 da UFABC
 Linguagem de programação utilizada Java
 Integrantes - RA 
 
-Caique de Jesus Santos      - 11201811567.
-Diego Araujo Giovanini      - 11201811750. 
-Fernando Schroder Rodrigues - 11201921885. 
-Gabriel Fernandes           - 11201720718. 
-Karolayne de Queiroz Campos - 11201810126. 
+Caique de Jesus Santos      - 11201811567
+
+Diego Araujo Giovanini      - 11201811750
+
+Fernando Schroder Rodrigues - 11201921885
+
+Gabriel Fernandes           - 11201720718
+
+Karolayne de Queiroz Campos - 11201810126
+
+
+*Link para video no YOUTUBE: https://youtu.be/sYNvaOQU0iI*
+
 
 ITEM (FEITO X)
 
