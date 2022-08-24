@@ -9,7 +9,7 @@ double  d;
 double  j;
 double  t1;
 String  t2;
-t1 = 'teste';
+t1 = 123;
 a= _key.nextDouble();
 b= _key.nextDouble();
 a = 1+2*3/b;

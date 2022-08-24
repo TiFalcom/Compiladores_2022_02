@@ -184,15 +184,12 @@ cmdattrib	:  ID { verificaID(_input.LT(-1).getText());
                {
                	 
                  IsiVariable var = (IsiVariable)symbolTable.get(_exprID);
-               	 try {
-				        if (var.getType() == 0 & isNumeric(_exprContent)== false) {
-				        	throw new IsiSemanticException("Symbol "+_exprID+" is not declared as number");
-				        }
-				    } catch (IsiSemanticException aux) {
-				        if(var.getType() == 1 & isNumeric(_exprContent)) {
-				        	throw new IsiSemanticException("Symbol "+_exprID+" is not declared as string");
-				        }
-				    }
+			        if (var.getType() == 0 & _exprContent.indexOf("\'") >=0) {
+			        	throw new IsiSemanticException("Symbol "+_exprID+" is declared as number");
+			        }
+			        else if(var.getType() == 1 & _exprContent.indexOf("\'") < 0) {
+			        	throw new IsiSemanticException("Symbol "+_exprID+" is declared as string");
+			        }
                	 CommandAtribuicao cmd = new CommandAtribuicao(_exprID, _exprContent);
                	 stack.peek().add(cmd);
                }

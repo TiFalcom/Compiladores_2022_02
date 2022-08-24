@@ -6,7 +6,7 @@ programa
   texto t2;
   numero c, d;
 
-  t1 = 'teste';
+  t2 = 123;
   leia(a);
   leia(b);
   

@@ -120,6 +120,18 @@ public class IsiLangLexer extends Lexer {
 			}
 		}
 		
+		public static boolean isNumeric(String strNum) {
+		    if (strNum == null) {
+		        return false;
+		    }
+		    try {
+		        double d = Double.parseDouble(strNum);
+		    } catch (NumberFormatException nfe) {
+		        return false;
+		    }
+		    return true;
+		}
+
 		public void exibeComandos(){
 			for (AbstractCommand c: program.getComandos()){
 				System.out.println(c);
@@ -132,7 +144,7 @@ public class IsiLangLexer extends Lexer {
 		
 		public void exibeWarnings() {
 			for (IsiSymbol is: symbolTableWar.getMap()) {
-				System.out.println("Simbolo " + is.getName() + "declarado mas nao utilizado");
+				System.out.println("Simbolo " + is.getName() + " declarado mas nao utilizado");
 			}
 		}
 
